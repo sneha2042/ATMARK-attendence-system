@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+	<div id="hero">
+		<h1 id="hero-title">ATMARK</h1>
+		<h3 id="hero-description">Next gen attendence system</h3>
+	</div>
+
+	<div id="activies-section">
+		<div class="activity">
+			<div class="activity-image" id="activity-image-goats"></div>
+			<p class="activity-title">Interactive environment.</p>
+			<p class="activity-description">Explore the site and its user friendly features.</p>
+		</div>
+
+		<div class="activity">
+			<a href="{% url 'face' %}"><div class="activity-image" id="activity-image-hike"></div></a>
+			<p class="activity-title">Contactless attendence</p>
+			<p class="activity-description">Your safety matters.Be safe while marking attendence using your face.</p>
+		</div>
+        
+        
+        <div class="activity">
+                <a href="{% url 'display' %}"><div class="activity-image" id="activity-image-explore"></div></a>
+                <p class="activity-title">View attendence</p>
+                <p class="activity-description">"View and Track your attendence so that you never run short of it"</p>
+        </div>
+     
+	</div>
+
+
+	<div id="guide-section">
+		<div id="guide-card">
+			<img id="profile-picture" src="{% static 'tick.jpg' %}">
+			<div id="guide-text">
+				<h2>75% attendence is compulsary for every student.</h2>
+				<p>A student Failing the above criteria will not be allowed to sit in examination.</p>
+				<p class="bold">-COLLEGE ADMINISTRATION</p>
+
+
+			</div>
+		</div>
+	</div>
+
+
+</body>

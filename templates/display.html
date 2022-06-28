@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+   
+
+{% for student in students %}
+    <a href="{{student.id}}">
+        {{student.name}}
+        {{student.branch}}
+        <img src ="{{student.picture.url}}" height=5% width=5%>
+    </a>
+{% endfor %}
+
+
+{% endblock %}

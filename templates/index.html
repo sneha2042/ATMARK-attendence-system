@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% block title %}
+   <title>FACE RECOGNITION </title>
+   <link rel="icon" href="{% static 'face_recog/images/logo.jpg' %}">
+   <link rel="stylesheet" href="{% static 'homepage.css' %}">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  {% endblock %}
+  
+</head>
+
+{% block content %}
+<body>
+
+    <div class="nav">
+      <h1>ATMARK</h1>  
+        <div class="options">
+         <a href="{% url 'show' %}"><button class="subbutton" >Sign In</button></a>
+        </div>
+    </div>   
+
+    {% ifequal context "" %}
+        <h1> {{context}}</h1>
+    {% else %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{context}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+    {% endifequal %}
+    
+    <div>
+        <button class="subbutton" >
+        Are you a student ?
+        </button>
+  </div>
+
+    <div class="info">
+        <div class="content">
+        <h1>ATTENDENCE MANAGEMENT SYSTEM </h1>
+        <ul>
+          <h4><img src="{% static 'tick.jpg' %}" class="tick">Face recognition based system ! </h4>
+          <h4><img src="{% static 'tick.jpg' %}" class="tick">Keep track of attendence</h4>
+          <h4><img src="{% static 'tick.jpg' %}" class="tick">Contactless attendence</h4>
+        </ul>
+        </div>
+    </div>    
+    <div class="membership">
+      <ul>
+            <li>75% attendence is compulsary for every student.</li>
+            <li>A student Failing the above criteria will not be allowed to sit in examination.</li>
+            <a href="{% url 'face' %}">
+              <button class="sbtn" >Mark attendence</button>
+              </a>
+              </ul>
+    </div>
+
+</body>
+{% endblock %}
+</html>
